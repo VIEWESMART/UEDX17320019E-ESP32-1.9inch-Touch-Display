@@ -37,7 +37,7 @@
 
 | Product                     | SOC           |  FLASH  |  PSRAM   | Link                   |
 | :------------------------: | :-----------: |:-------: | :---------: | :------------------: |
-| UEDX24320024E-WB-A | ESP32S3R8 |   16M   | 8M (Octal SPI) | [VIEWE Mall](https://viewedisplay.com/product/esp32-2-4-inch-240x320-rgb-ips-tft-display-touch-screen-arduino-lvgl-wifi-ble-uart-smart-module/)  |
+| UEDX24320024E-WB-A | ESP32S3R8 |   16M   | 8M (Octal SPI) | [VIEWE Mall]()  |
 
 ## Hardware Overview
 
@@ -50,29 +50,26 @@
 
 ### 2. Screen
 
-* Size: 2.4-inch IPS screen
-* Resolution: 240x320px
+* Size: 1.9-inch IPS screen
+* Resolution: 170x320px
 * Screen type: IPS
 * Driver chip: GC9307
-* Compatibility library:  ESP32_Display_Panel (>= 1.0.0)
+* Compatibility library:  GFX Library for Arduino
 * Bus communication protocol: SPI
-* For more details：[Display Datasheet](information/UE024QV-RB40-A038A.pdf)
+* For more details：[Display Datasheet]()
 
 ### 3. Touch
 
-* Chip: CHSC6540
+* Chip: 7) CHSC6413
 * Bus communication protocol: IIC
-* For more details：[Touch IC Datasheet_EN](information/DS_CHSC6540_V1.0%20Datasheet.pdf)
+* For more details：[Touch IC Datasheet_EN]()
 
 ## Hardware Connections
-- Connect the screen ribbon cable and touch ribbon cable (gold contacts 
- facing up).
-- USB-C power supply (5V/1A adapter).
-- UART for programming, debugging, or power supply (5V/1A adapter).
-- For the first programming, press and hold the `BOOT` button to enter 
+- USB1 for programming, debugging, or power supply (5V/1A adapter).
+- For programming, press and hold the `BOOT` button to enter 
  download mode.
 <p align="center" width="100%">
-    <img src="image/overview.png" alt="example">
+    <img src="image/" alt="example">
 </p>
 
 ## QuickStart
@@ -87,19 +84,16 @@
 ### ESP-IDF Framework ([Novice tutorial]())
 - Supported Versions: v5.1/5.2/5.3
 - Download the example code from the repository and compile/run it directly.
-- Repository Address: [examples](examples/esp_idf)
+- Repository Address: [examples]()，Not released yet
 
 ### Arduino Framework ([Novice tutorial]())
 1. Install[Arduino](https://www.arduino.cc/en/software),Choose installation based on your system type.
 2. Install the ESP32 core: Search for and download `esp32`(by Espressif >= v3.0.7) in the `Board Manager`.
 3. Install the required libraries:
-    * Search and install `ESP32_Display_Panel` (>= v1.0.0). Select `Yes` for automatic dependency installation.
+    * Search and install `GFX Library for Arduino` (by Moon). 
     * Install the `LVGL` (v8.4.0) library. 
-4. Open the example: `ESP32_Display_Panel`-> `examples` -> `arduino` -> `gui` -> `lvgl_v8`.
-5. Configure the `esp_panel_board_supported_conf.h` file:
-    * Enable the macro: `#define ESP_PANEL_BOARD_DEFAULT_USE_SUPPORTED  (1)`
-    * Uncomment the corresponding screen model definition: `#define BOARD_VIEWE_UEDX24320024E_WB_A`
-6. Select the correct settings in the Tools menu, as shown in the table below:
+4. Open the example: Download the example of this warehouse Open
+5. Select the correct settings in the Tools menu, as shown in the table below:
 #### ESP32-S3
 | Setting                               | Value                                 |
 | :-------------------------------: | :-------------------------------: |
@@ -119,8 +113,8 @@
 | Upload Speed                     | 921600                               |
 | USB Mode                           | Hardware CDC and JTAG     |
    
-7. Select the correct port.
-8. Click "<kbd>[√](image/8.png)</kbd>" in the upper right corner to compile,If the compilation is correct, connect the microcontroller to the computer,Click "<kbd>[→](image/9.png)</kbd>" in the upper right corner to download.
+6. Select the correct port.
+7. Click "<kbd>[√](image/8.png)</kbd>" in the upper right corner to compile,If the compilation is correct, connect the microcontroller to the computer,Click "<kbd>[→](image/9.png)</kbd>" in the upper right corner to download.
 
 ### PlatformIO ([Novice tutorial]())
 1. Install[VisualStudioCode](https://code.visualstudio.com/Download),Choose installation based on your system type.
@@ -150,19 +144,18 @@
 
 | IPS Screen Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|
-| CS         | IO42       |
-| SCK         | IO40       |
-| MOSI         | IO45       |
-| DC         | IO41       |
-| RST         | IO39       |
-| BACKLIGHT   | IO13       |
+| CS         | IO10        |
+| SCK         | IO12       |
+| MOSI         | IO13      |
+| RST         | IO1        |
+| BACKLIGHT   | IO38       |
 
 | Touch Chip Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|
-| RST         | IO2(Not Used)|
-| INT         | IO4(Not Used)|
-| SDA         | IO1       |
-| SCL         | IO3       |
+| RST         | IO3   |
+| INT         | IO8   |
+| SDA         | IO9       |
+| SCL         | IO46       |
 
 | USB (CH340C) Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|
@@ -174,44 +167,17 @@
 |   boot    | IO0       |
 |   reset   | chip-en   |
 
-| SD Card Pin  | ESP32S3 Pin|
-| :------------------: | :------------------:|
-| D1         | IO18       |
-| D2         | IO15       |
-| MOSI        | IO17       |
-| MISO         | IO16       |
-
-| UART/RS485 Pin  | ESP32S3 Pin|
-| :------------------: | :------------------:|
-| UARTTX         | IO43(RXD0)      |
-| UARTRX         | IO44(TXD0)      |
-
-| RGB LED Pin  | ESP32S3 Pin|
-| :------------------: | :------------------:|
-| RGB LED         | IO0   |
-
-| Buzzer Pin  | ESP32S3 Pin|
-| :------------------: | :------------------:|
-|   buzzer    | IO38  |
-
-
 ## Schematic
 <p align="center" width="100%">
-    <img src="Schematic/UEDX24320028E-WB-A%20V1.1%20sch.png" alt="example">
+    <img src="" alt="example">
 </p>
 
 ## Information
-[products specification](information/UEDX24320024E-WB-A%20V1.0%20SPEC.pdf)
+[products specification](information/)
 
-[Display Datasheet](information/UE024QV-RB40-A038A.pdf)
+[Display Datasheet](information/)
 
-[Touch IC](information/DS_CHSC6540_V1.0%20Datasheet.pdf)
-
-[5050RGB-LED](information/C2843785_RGB%2BLED(Built-in%20IC)_XL-5050RGBC-WS2812B_specification_WJ1123912.PDF)
-
-[Buzzer](information/C7544813_Buzzer_HYG-8503A_specification_WJ436381.PDF)
-
-[CH340C](information/C84681_USB%20Conversion%20chip_CH340C_specification_WJ1187874.PDF)
+[Touch IC](information/)
 
 
 ## FAQ
