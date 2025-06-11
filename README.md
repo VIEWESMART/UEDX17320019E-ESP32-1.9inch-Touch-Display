@@ -1,7 +1,7 @@
 <h1 align = "center">VIEWE ESP32-S3 Smart Display Quick Guide</h1>
 
 <div align="center">
-    <img src="image/2.4.jpg" alt="">
+    <img src="image/1.9inch.jpg" alt="">
     <h1 style="font-size: 18px;">Model: UEDX24320024E-WB-A</h1>
 </div>
 
