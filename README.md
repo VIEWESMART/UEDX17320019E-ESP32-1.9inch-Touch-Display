@@ -1,43 +1,11 @@
 <h1 align = "center">VIEWE ESP32-S3 Smart Display Quick Guide</h1>
 
 <div align="center">
-    <img src="image/1.9inch.jpg" alt="">
+    <img src="image/1.9inch.png" alt="">
     <h1 style="font-size: 18px;">Model: UEDX24320024E-WB-A</h1>
 </div>
 
 * **[中文版](./README_CN.md)**
-
-## Directory
-- [Repository Directory Overview](#repository-directory-overview)
-- [PurchaseLink](#purchaseLink)
-- [Hardware Overview](#hardware-overview)
-- [QuickStart](#quickstart)
-- [PinOverview](#pinoverview)
-- [Schematic](#schematic)
-- [Information](#information)
-- [firmware download](#firmware-download)
-- [FAQ](#faq)
-- [Technical Suppor](#technical-suppor)
-
-## Repository Directory Overview
-
-```
-├── Libraries         Library files required for the Arduino example  
-├── Schematic         The circuit schematic of the product   
-├── examples          Sample files, including the IDF framework and the Arduino framework
-├── firmware          firmware
-├── image             Product or sample project related images
-├── information       Product specifications, including the IC or peripherals involved
-├── tools             Burn tool and image conversion tool
-├── README_CN.md      Chinese version Quick Guide and Product Brief
-└── README.md         English version of the quick guide and product introduction
-```
-
-## PurchaseLink
-
-| Product                     | SOC           |  FLASH  |  PSRAM   | Link                   |
-| :------------------------: | :-----------: |:-------: | :---------: | :------------------: |
-| UEDX24320024E-WB-A | ESP32S3R8 |   16M   | 8M (Octal SPI) | [VIEWE Mall]()  |
 
 ## Hardware Overview
 
