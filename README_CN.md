@@ -36,9 +36,7 @@
 
 - USB1 用于编程、调试或供电（5V/1A 适配器）。
 - 编程时，按住 `BOOT` 按钮可进入下载模式。
-<p align="center" width="100%">
-    <img src="image/" alt="example">
-</p>
+
 
 ## 快速开始
 
